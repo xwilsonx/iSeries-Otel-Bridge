@@ -1,0 +1,78 @@
+# Single Pod Deployment - For low volume use cases (< 1,000 logs/sec)
+# This deployment directly tails log files and sends to OTel without Kafka
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iseries-otel-bridge-single
+  namespace: observability
+  labels:
+    app: iseries-otel-bridge
+    mode: single
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iseries-otel-bridge
+      mode: single
+  template:
+    metadata:
+      labels:
+        app: iseries-otel-bridge
+        mode: single
+    spec:
+      containers:
+      - name: bridge
+        image: <YOUR_AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/iseries-otel-bridge:latest
+        imagePullPolicy: Always
+        env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector:4317"
+        - name: OTEL_SERVICE_NAME
+          value: "iseries-log-bridge"
+        - name: INPUT_FILE_PATH_TAIL
+          value: "/var/log/iseries/app.log"
+        - name: PARSER_GROK_PATTERN
+          value: "(?s)%{TIMESTAMP_ISO8601:timestamp} %{WORD:msgid} %{GREEDYDATA:message}"
+        - name: ROLE
+          value: "single"
+        volumeMounts:
+        - name: log-volume
+          mountPath: /var/log/iseries
+          readOnly: true
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+      volumes:
+      - name: log-volume
+        persistentVolumeClaim:
+          claimName: iseries-logs-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iseries-otel-bridge-single
+  namespace: observability
+spec:
+  selector:
+    app: iseries-otel-bridge
+    mode: single
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080

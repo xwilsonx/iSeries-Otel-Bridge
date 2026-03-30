@@ -1,0 +1,23 @@
+03/19/2026 06:00:15  PRT  012345/USER/PRT500R  PRT001  Printer PRT01 opened - ready for output.
+03/19/2026 06:30:32  PRT  012346/USER/PRT500R  PRT002  Output queue PAYOUTQ started - 3 files waiting.
+03/19/2026 07:15:08  PRT  012347/USER/PRT500R  PRT003  Spool file ORD500R_0001 assigned to PRT01.
+03/19/2026 08:00:45  PRT  012348/USER/PRT500R  PRT004  Printer PRT02 offline - held spool files: 15.
+03/19/2026 08:45:22  PRT  012349/USER/PRT500R  PRT005  Spool file sequence 1 printed from PAYOUTQ.
+03/19/2026 09:30:17  PRT  012350/USER/PRT500R  PRT006  Print complete - 25 pages - paper out detected.
+03/19/2026 10:15:55  PRT  012351/USER/PRT500R  PRT007  Spool file PAY500R_0002 released from hold.
+03/19/2026 11:00:33  PRT  012352/USER/PRT500R  PRT008  Printer PRT03 initialized - forms loaded: CHECK.
+03/19/2026 11:45:08  PRT  012353/USER/PRT500R  PRT009  System output queue SYSPRINT created.
+03/19/2026 12:30:42  PRT  012354/USER/PRT500R  PRT010  Paper added - printer PRT01 resumed.
+03/19/2026 13:15:19  PRT  012355/USER/PRT500R  PRT011  Spool file deleted from queue - job ended.
+03/19/2026 14:00:35  PRT  012356/USER/PRT500R  PRT012  Printer PRT02 brought online - held files: 15.
+03/19/2026 14:45:11  PRT  012357/USER/PRT500R  PRT013  Alignment pattern printed - verify position.
+03/19/2026 15:30:27  PRT  012358/USER/PRT500R  PRT014  Hold expiration reached - spool file released.
+03/19/2026 16:15:08  PRT  012359/USER/PRT500R  PRT015  Jam cleared at tray 2 - 3 pages printed before jam.
+03/19/2026 17:00:44  PRT  012360/USER/PRT500R  PRT016  Test output queue created for debug prints.
+03/19/2026 17:45:22  PRT  012361/USER/PRT500R  PRT017  Print head replaced - printer PRT03 recalibrated.
+03/19/2026 18:30:55  PRT  012362/USER/PRT500R  PRT018  Current depth of PAYOUTQ: 8 spool files.
+03/19/2026 19:15:33  PRT  012363/USER/PRT500R  PRT019  Ink cartridge replaced - pages printed: 15000.
+03/19/2026 20:00:17  PRT  012364/USER/PRT500R  PRT020  Priority change: file ORD500R_0003 to priority 1.
+03/19/2026 21:30:42  PRT  012365/USER/PRT500R  PRT021  Spool file CUST500R_0001 printing - estimated 50 pages.
+03/19/2026 22:15:08  PRT  012366/USER/PRT500R  PRT022  Printer PRT01 status: idle, 0 files queued.
+03/19/2026 23:00:00  PRT  012367/USER/PRT500R  PRT023  Night print processing initialized - 0 files queued.

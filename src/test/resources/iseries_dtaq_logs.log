@@ -1,0 +1,23 @@
+03/19/2026 06:00:15  DTAQ  012345/USER/DTAQ500R  DTAQ001  Data queue MYLIB/ORDQ created - max message length 256.
+03/19/2026 06:30:32  DTAQ  012346/USER/DTAQ500R  DTAQ002  Message sent to ORDQ - order notification.
+03/19/2026 07:15:08  DTAQ  012347/USER/DTAQ500R  DTAQ003  Message received from ORDQ - wait time 0ms.
+03/19/2026 08:00:45  DTAQ  012348/USER/DTAQ500R  DTAQ004  Data queue PRODLIB/INVDQ created - keyed entry.
+03/19/2026 08:45:22  DTAQ  012349/USER/DTAQ500R  DTAQ005  Keyed message sent to INVDQ - key: SKU-A100.
+03/19/2026 09:30:17  DTAQ  012350/USER/DTAQ500R  DTAQ006  Message received with key SKU-A100 - found.
+03/19/2026 10:15:55  DTAQ  012351/USER/DTAQ500R  DTAQ007  Data queue QUSRSYS/MSGQ opened for read.
+03/19/2026 11:00:33  DTAQ  012352/USER/DTAQ500R  DTAQ008  Queue depth: 5 messages, max 100.
+03/19/2026 11:45:08  DTAQ  012353/USER/DTAQ500R  DTAQ009  Clear queue command executed - 5 messages removed.
+03/19/2026 12:30:42  DTAQ  012354/USER/DTAQ500R  DTAQ010  Message wait timeout: 5000ms - no message.
+03/19/2026 13:15:19  DTAQ  012355/USER/DTAQ500R  DTAQ011  Data queue MYLIB/PAYQ created - sender release required.
+03/19/2026 14:00:35  DTAQ  012356/USER/DTAQ500R  DTAQ012  Message sent to PAYQ - pay slip notification.
+03/19/2026 14:45:11  DTAQ  012357/USER/DTAQ500R  DTAQ013  Distributed data queue QUSRSYS/DTAQ1 configured.
+03/19/2026 15:30:27  DTAQ  012358/USER/DTAQ500R  DTAQ014  Peek queue: 2 messages visible - oldest 300s.
+03/19/2026 16:15:08  DTAQ  012359/USER/DTAQ500R  DTAQ015  Key range search: SKU-A100 to SKU-Z999.
+03/19/2026 17:00:44  DTAQ  012360/USER/DTAQ500R  DTAQ016  Sender identification enabled on queue.
+03/19/2026 17:45:22  DTAQ  012361/USER/DTAQ500R  DTAQ017  Remote queue connection established to REMOTE400.
+03/19/2026 18:30:55  DTAQ  012362/USER/DTAQ500R  DTAQ018  Message deleted from queue - processed successfully.
+03/19/2026 19:15:33  DTAQ  012363/USER/DTAQ500R  DTAQ019  Queue INVDQ threshold: 80% full.
+03/19/2026 20:00:17  DTAQ  012364/USER/DTAQ500R  DTAQ020  Message wait started - expected arrival 30s.
+03/19/2026 21:30:42  DTAQ  012365/USER/DTAQ500R  DTAQ021  DTAQ entry forwarded to remote system REMOTE400.
+03/19/2026 22:15:08  DTAQ  012366/USER/DTAQ500R  DTAQ022  Data queue statistics: sent=500, received=495.
+03/19/2026 23:00:00  DTAQ  012367/USER/DTAQ500R  DTAQ023  Night data queue monitoring started.

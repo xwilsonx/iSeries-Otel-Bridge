@@ -1,0 +1,14 @@
+# OpenTelemetry Trace Context Logs
+# These logs contain trace_id and span_id for linking to distributed traces
+# Grok pattern: %{TIMESTAMP_ISO8601:timestamp} %{WORD:level} \[trace_id=%{DATA:trace_id} span_id=%{DATA:span_id}\] %{GREEDYDATA:message}
+
+2023-10-27T09:00:00.000Z INFO  [trace_id=4bf92f3577b34da6a3ce929d0e0e4736 span_id=00f067aa0ba902b7] HTTP GET /api/v1/products recv=1523 bytes
+2023-10-27T09:00:01.000Z DEBUG [trace_id=4bf92f3577b34da6a3ce929d0e0e4736 span_id=1a2b3c4d5e6f7a8b] SQL SELECT * FROM products WHERE category='electronics'
+2023-10-27T09:00:02.000Z DEBUG [trace_id=4bf92f3577b34da6a3ce929d0e0e4736 span_id=9f0e1d2c3b4a5968] Redis HGET product:12345 price
+2023-10-27T09:00:03.000Z INFO  [trace_id=4bf92f3577b34da6a3ce929d0e0e4736 span_id=b7c8d9e0f1a2b3c4] HTTP 200 GET /api/v1/products duration=45ms
+2023-10-27T09:05:00.000Z INFO  [trace_id=0af7651916cd43dd8448eb211c80319c span_id=c3b4a5d6e7f80192] Kafka consume topic=orders partition=0 offset=12345
+2023-10-27T09:05:01.000Z WARN  [trace_id=0af7651916cd43dd8448eb211c80319c span_id=d4c5d6e7f8a9b0c1] Kafka message processing slow: 250ms threshold exceeded
+2023-10-27T09:05:02.000Z INFO  [trace_id=0af7651916cd43dd8448eb211c80319c span_id=e5d6e7f8a9b0c1d2] Kafka commit offsets for orders
+2023-10-27T09:10:00.000Z ERROR [trace_id=b27f4d2c8e3f4a5b6c7d8e9f0a1b2c3d span_id=f1e2d3c4b5a69788] gRPC call /order.Service/CreateOrder failed: DEADLINE_EXCEEDED
+2023-10-27T09:10:01.000Z ERROR [trace_id=b27f4d2c8e3f4a5b6c7d8e9f0a1b2c3d span_id=a2b3c4d5e6f7a8b9] Retry attempt 1/3 for CreateOrder
+2023-10-27T09:10:02.000Z INFO  [trace_id=b27f4d2c8e3f4a5b6c7d8e9f0a1b2c3d span_id=b3c4d5e6f7a8b9c0] gRPC call /order.Service/CreateOrder succeeded after retry

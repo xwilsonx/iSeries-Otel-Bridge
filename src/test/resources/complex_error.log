@@ -1,0 +1,12 @@
+2023-10-27 14:01:00 ERROR Payment processing failed
+java.lang.RuntimeException: Payment gateway timeout
+	at com.iseries.payment.Gateway.connect(Gateway.java:45)
+	at com.iseries.payment.Processor.process(Processor.java:12)
+	at com.iseries.payment.Service.handle(Service.java:99)
+Caused by: java.net.SocketTimeoutException: Connect timed out
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206)
+2023-10-27 14:01:05 INFO  Retrying payment for transaction TXN-998877
+2023-10-27 14:01:06 WARN  Retry attempt 1 of 3
+2023-10-27 14:01:08 INFO  Payment successful on retry

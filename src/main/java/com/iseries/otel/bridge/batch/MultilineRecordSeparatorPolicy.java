@@ -1,8 +1,7 @@
 package com.iseries.otel.bridge.batch;
 
-import org.springframework.batch.item.file.separator.SimpleRecordSeparatorPolicy;
-
 import java.util.regex.Pattern;
+import org.springframework.batch.item.file.separator.SimpleRecordSeparatorPolicy;
 
 public class MultilineRecordSeparatorPolicy extends SimpleRecordSeparatorPolicy {
 
@@ -14,9 +13,8 @@ public class MultilineRecordSeparatorPolicy extends SimpleRecordSeparatorPolicy 
 
     @Override
     public boolean isEndOfRecord(String line) {
-        // If the line is empty, it's not the end (could be a blank line in a stack
-        // trace)
-        if (line.trim().isEmpty()) {
+        // Null or empty lines are not record boundaries (continuations)
+        if (line == null || line.trim().isEmpty()) {
             return false;
         }
         // As per Spring Batch docs, isEndOfRecord is called for the line *after*

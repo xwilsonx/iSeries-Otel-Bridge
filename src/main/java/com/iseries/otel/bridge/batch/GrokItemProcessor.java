@@ -3,11 +3,10 @@ package com.iseries.otel.bridge.batch;
 import io.krakens.grok.api.Grok;
 import io.krakens.grok.api.GrokCompiler;
 import io.krakens.grok.api.Match;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.batch.item.ItemProcessor;
-
 import java.util.HashMap;
 import java.util.Map;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.batch.item.ItemProcessor;
 
 @Slf4j
 public class GrokItemProcessor implements ItemProcessor<String, Map<String, Object>> {

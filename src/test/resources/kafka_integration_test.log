@@ -1,0 +1,89 @@
+# Kafka Integration Test Data
+# This file tests the Kafka-based horizontal scaling pipeline
+# Log format: ISO timestamp + level + message (Kafka message key = timestamp)
+2026-03-18T10:00:00.000Z INFO Application started - Kafka consumer group initializing
+2026-03-18T10:00:00.123Z INFO Connected to Kafka broker at localhost:9092
+2026-03-18T10:00:00.456Z INFO Consumer group iseries-log-consumers joining
+2026-03-18T10:00:01.000Z INFO Batch job launched with 50 log lines
+2026-03-18T10:00:01.100Z DEBUG Processing log line 1 of 50
+2026-03-18T10:00:01.200Z DEBUG Processing log line 2 of 50
+2026-03-18T10:00:01.300Z DEBUG Processing log line 3 of 50
+2026-03-18T10:00:01.400Z TRACE Cache lookup for key: user_session_abc123
+2026-03-18T10:00:01.500Z TRACE Cache miss for key: user_session_abc123
+2026-03-18T10:00:01.600Z DEBUG Database query executed in 12ms: SELECT * FROM users
+2026-03-18T10:00:01.700Z DEBUG Processing log line 7 of 50
+2026-03-18T10:00:01.800Z WARN  Rate limit approaching: 850/1000 requests per minute
+2026-03-18T10:00:01.900Z ERROR Failed to connect to downstream service: connection timeout
+2026-03-18T10:00:02.000Z ERROR Stack trace follows:
+java.net.ConnectException: Connection refused
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at java.net.PlainSocketImpl.connect(PlainSocketImpl.java:195)
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:366)
+2026-03-18T10:00:02.100Z INFO Retry attempt 1/3 for downstream service call
+2026-03-18T10:00:02.200Z DEBUG Processing log line 12 of 50
+2026-03-18T10:00:02.300Z INFO Health check passed for all subsystems
+2026-03-18T10:00:02.400Z DEBUG Processing log line 14 of 50
+2026-03-18T10:00:02.500Z TRACE Thread pool stats: active=23 idle=7 total=30
+2026-03-18T10:00:02.600Z DEBUG Processing log line 16 of 50
+2026-03-18T10:00:02.700Z INFO Queue depth: 145 messages pending processing
+2026-03-18T10:00:02.800Z DEBUG Processing log line 18 of 50
+2026-03-18T10:00:02.900Z WARN  Memory usage high: 780MB / 1024MB
+2026-03-18T10:00:03.000Z DEBUG Processing log line 20 of 50
+2026-03-18T10:00:03.100Z ERROR Transaction failed and rolled back
+java.lang.RuntimeException: Database constraint violation
+	at com.iseries.db.Transaction.commit(Transaction.java:142)
+	at com.iseries.service.OrderService.process(OrderService.java:89)
+	at com.iseries.controller.OrderController.handle(OrderController.java:56)
+2026-03-18T10:00:03.200Z DEBUG Processing log line 23 of 50
+2026-03-18T10:00:03.300Z INFO GC completed in 45ms - heap freed: 120MB
+2026-03-18T10:00:03.400Z DEBUG Processing log line 25 of 50
+2026-03-18T10:00:03.500Z TRACE Incoming request: GET /api/v1/orders/12345
+2026-03-18T10:00:03.600Z DEBUG Processing log line 27 of 50
+2026-03-18T10:00:03.700Z INFO Request completed: 200 OK in 156ms
+2026-03-18T10:00:03.800Z DEBUG Processing log line 29 of 50
+2026-03-18T10:00:03.900Z WARN  Slow query detected: 2500ms - SELECT with JOINs
+2026-03-18T10:00:04.000Z DEBUG Processing log line 31 of 50
+2026-03-18T10:00:04.100Z DEBUG Connection pool: active=45 idle=55 total=100
+2026-03-18T10:00:04.200Z DEBUG Processing log line 33 of 50
+2026-03-18T10:00:04.300Z TRACE Message published to Kafka topic iseries-logs
+2026-03-18T10:00:04.400Z DEBUG Processing log line 35 of 50
+2026-03-18T10:00:04.500Z INFO Batch processing complete: 50 records in 3500ms
+2026-03-18T10:00:04.600Z DEBUG Processing log line 37 of 50
+2026-03-18T10:00:04.700Z DEBUG Offset committed for partition 0
+2026-03-18T10:00:04.800Z DEBUG Processing log line 39 of 50
+2026-03-18T10:00:04.900Z INFO Consumer preparing to poll next batch
+2026-03-18T10:00:05.000Z DEBUG Processing log line 41 of 50
+2026-03-18T10:00:05.100Z TRACE Kafka consumer rebalance completed
+2026-03-18T10:00:05.200Z DEBUG Processing log line 43 of 50
+2026-03-18T10:00:05.300Z DEBUG Record count this partition: 1250
+2026-03-18T10:00:05.400Z DEBUG Processing log line 45 of 50
+2026-03-18T10:00:05.500Z INFO Consumer lag: 0 messages
+2026-03-18T10:00:05.600Z DEBUG Processing log line 47 of 50
+2026-03-18T10:00:05.700Z DEBUG Processing log line 48 of 50
+2026-03-18T10:00:05.800Z DEBUG Processing log line 49 of 50
+2026-03-18T10:00:05.900Z DEBUG Final log line 50 of batch
+2026-03-18T10:00:06.000Z INFO New batch started - buffer flushed at 1 second boundary
+2026-03-18T10:00:06.100Z INFO Kafka partition 0 assigned to this consumer
+2026-03-18T10:00:06.200Z INFO Starting multiline stack trace test
+2026-03-18T10:00:06.300Z ERROR Critical error in order processing workflow:
+com.iseries.workflow.OrderWorkflowException: Order validation failed
+    at com.iseries.workflow.OrderWorkflow.validate(OrderWorkflow.java:45)
+    at com.iseries.workflow.OrderWorkflow.execute(OrderWorkflow.java:23)
+    at com.iseries.batch.OrderBatchJob.processItem(OrderBatchJob.java:67)
+    at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+    at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+    at java.lang.reflect.Method.invoke(Method.java:498)
+Caused by: com.iseries.validation.ValidationException: Invalid order state
+    at com.iseries.validation.OrderValidator.validate(OrderValidator.java:32)
+    ... 7 more
+2026-03-18T10:00:06.400Z INFO Multiline stack trace captured successfully
+2026-03-18T10:00:06.500Z WARN  This warning should be treated as a single log record
+2026-03-18T10:00:06.600Z INFO This INFO message starts a new record
+2026-03-18T10:00:06.700Z DEBUG Debug message following INFO - same record until next timestamp
+2026-03-18T10:00:06.800Z TRACE Trace message - part of INFO record
+2026-03-18T10:00:06.900Z INFO New INFO record begins here - buffer should have 5 lines
+2026-03-18T10:00:07.000Z DEBUG Buffer about to flush - 1 second elapsed
+2026-03-18T10:00:07.100Z TRACE Final trace before flush
+2026-03-18T10:00:07.200Z INFO Buffer flushed - new batch started

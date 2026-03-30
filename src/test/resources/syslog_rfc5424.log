@@ -1,0 +1,6 @@
+<165>1 2023-10-27T10:00:00.000Z myhost.example.com appname 12345 ID47 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1011"] BOM User login successful
+<134>1 2023-10-27T10:00:05.123Z myhost.example.com appname 12345 ID48 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1012"] Database connection pool initialized with 10 connections
+<163>1 2023-10-27T10:01:00.456Z myhost.example.com appname 12345 ID49 [exampleSDID@32473 iut="3" eventSource="Application" eventID="1013"] Configuration reload requested by admin
+<131>1 2023-10-27T10:02:30.789Z firewall.example.com sshd 9876 ID50 - Failed password for root from 10.0.0.99 port 22 ssh2
+<131>1 2023-10-27T10:02:31.012Z firewall.example.com sshd 9876 ID51 - Failed password for root from 10.0.0.99 port 22 ssh2
+<129>1 2023-10-27T10:03:00.000Z db.example.com postgres 5432 ID52 [meta sequenceId="1"] FATAL: too many connections for role "webapp"

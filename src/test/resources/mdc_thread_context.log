@@ -1,0 +1,11 @@
+2023-10-27 10:00:00.123 [main] INFO  com.myapp.Application - requestId=req-001 sessionId=sess-abc Application startup completed in 3245ms
+2023-10-27 10:00:01.456 [http-nio-8080-exec-1] DEBUG com.myapp.filter.AuthFilter - requestId=req-002 sessionId=sess-def userId=user-100 Authentication token validated
+2023-10-27 10:00:02.789 [http-nio-8080-exec-1] INFO  com.myapp.controller.OrderController - requestId=req-002 sessionId=sess-def userId=user-100 orderId=ORD-555 Order placed successfully, total=299.99
+2023-10-27 10:00:03.012 [http-nio-8080-exec-2] WARN  com.myapp.service.InventoryService - requestId=req-003 sessionId=sess-ghi userId=user-200 sku=PROD-001 Low stock warning: remaining=5 threshold=10
+2023-10-27 10:00:04.345 [async-executor-1] ERROR com.myapp.service.NotificationService - requestId=req-004 sessionId=sess-jkl userId=user-300 Failed to send email notification
+java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350)
+	at com.myapp.email.SmtpClient.connect(SmtpClient.java:42)
+	at com.myapp.service.NotificationService.sendEmail(NotificationService.java:87)
+2023-10-27 10:00:05.678 [http-nio-8080-exec-3] INFO  com.myapp.controller.HealthController - requestId=req-005 sessionId= Health check passed: db=UP cache=UP queue=UP

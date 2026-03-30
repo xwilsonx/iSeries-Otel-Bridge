@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mvn compile:*)",
+      "Bash(mvn spotless:apply -q 2>&1 | tail -20)",
+      "Bash(mvn test:*)"
+    ]
+  }
+}

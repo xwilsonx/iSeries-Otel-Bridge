@@ -1,0 +1,52 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iseries-otel-bridge-tailer
+  namespace: observability
+  labels:
+    app: iseries-otel-bridge
+    role: tailer
+spec:
+  replicas: 1 # Single tailer pod - multiple tailers would cause duplicate logs
+  selector:
+    matchLabels:
+      app: iseries-otel-bridge
+      role: tailer
+  template:
+    metadata:
+      labels:
+        app: iseries-otel-bridge
+        role: tailer
+    spec:
+      containers:
+      - name: bridge
+        image: <YOUR_AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/iseries-otel-bridge:latest
+        imagePullPolicy: Always
+        env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector:4317"
+        - name: OTEL_SERVICE_NAME
+          value: "iseries-log-bridge"
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka:29092"
+        - name: KAFKA_TOPIC
+          value: "iseries-logs"
+        - name: ROLE
+          value: "tailer"
+        - name: INPUT_FILE_PATH_TAIL
+          value: "/var/log/iseries/app.log"
+        volumeMounts:
+        - name: log-volume
+          mountPath: /var/log/iseries
+          readOnly: true
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "250m"
+      volumes:
+      - name: log-volume
+        persistentVolumeClaim:
+          claimName: iseries-logs-pvc

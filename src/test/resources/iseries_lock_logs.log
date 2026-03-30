@@ -1,0 +1,23 @@
+03/19/2026 06:00:15  LCK  012345/USER/LCK500R  LCK001  Object lock acquired by job 012345/USER/ORD500R.
+03/19/2026 06:30:32  LCK  012346/USER/LCK500R  LCK002  Share lock held by 3 jobs - contention detected.
+03/19/2026 07:15:08  LCK  012347/USER/LCK500R  LCK003  Exclusive lock requested - waited 30 seconds.
+03/19/2026 08:00:45  LCK  012348/USER/LCK500R  LCK004  Lock timeout after 45 seconds - job 012346.
+03/19/2026 08:45:22  LCK  012349/USER/LCK500R  LCK005  Lock released by job 012345 - transaction committed.
+03/19/2026 09:30:17  LCK  012350/USER/LCK500R  LCK006  *MSGQ lock held by QSECOFR.
+03/19/2026 10:15:55  LCK  012351/USER/LCK500R  LCK007  Lock escalation: 50 row locks to 1 table lock.
+03/19/2026 11:00:33  LCK  012352/USER/LCK500R  LCK008  Temporary lock acquired and released.
+03/19/2026 11:45:08  LCK  012353/USER/LCK500R  LCK009  Deadlock detected between jobs 012347 and 012348.
+03/19/2026 12:30:42  LCK  012354/USER/LCK500R  LCK010  Job 012347 selected as deadlock victim - rolled back.
+03/19/2026 13:15:19  LCK  012355/USER/LCK500R  LCK011  *FILE lock monitor alert: 10 locks pending.
+03/19/2026 14:00:35  LCK  012356/USER/LCK500R  LCK012  Lock wait timeout: 60 seconds exceeded.
+03/19/2026 14:45:11  LCK  012357/USER/LCK500R  LCK013  *USRPRF lock acquired by QSECOFR for user update.
+03/19/2026 15:30:27  LCK  012358/USER/LCK500R  LCK014  Data space lock held - no access allowed.
+03/19/2026 16:15:08  LCK  012359/USER/LCK500R  LCK015  Lock granted to job 012349 - read-only access.
+03/19/2026 17:00:44  LCK  012360/USER/LCK500R  LCK016  Lock information: 5 shared, 1 exclusive held.
+03/19/2026 17:45:22  LCK  012361/USER/LCK500R  LCK017  Member lock on MBR01 - add access requested.
+03/19/2026 18:30:55  LCK  012362/USER/LCK500R  LCK018  Job 012350 acquired exclusive lock - update pending.
+03/19/2026 19:15:33  LCK  012363/USER/LCK500R  LCK019  Object lock request rejected - insufficient authority.
+03/19/2026 20:00:17  LCK  012364/USER/LCK500R  LCK020  Lock monitor: threshold 25 exceeded for ORDERS.
+03/19/2026 21:30:42  LCK  012365/USER/LCK500R  LCK021  Uncommitted changes detected - lock held 120s.
+03/19/2026 22:15:08  LCK  012366/USER/LCK500R  LCK022  All locks released for job 012351 - commit.
+03/19/2026 23:00:00  LCK  012367/USER/LCK500R  LCK023  Night lock monitoring initialized - threshold: 50.

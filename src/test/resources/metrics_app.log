@@ -1,0 +1,3 @@
+2023-10-27 17:00:00 METRIC cpu_usage=45 memory_usage=2048
+2023-10-27 17:01:00 METRIC cpu_usage=55 memory_usage=2052
+2023-10-27 17:02:00 METRIC cpu_usage=90 memory_usage=2100

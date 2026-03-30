@@ -1,0 +1,3 @@
+[2023-10-27 15:30:00] [AUDIT] User 'admin' logged in from 192.168.1.5
+[2023-10-27 15:30:05] [AUDIT] User 'admin' accessed /secure/config
+[2023-10-27 15:35:10] [WARN]  User 'guest' attempted unauthorized access to /admin

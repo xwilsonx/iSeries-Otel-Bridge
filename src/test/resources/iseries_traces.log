@@ -1,0 +1,31 @@
+03/19/2026 06:00:15  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_START  Distributed trace initiated for order ORD-2026-0319-0001.
+03/19/2026 06:00:16  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_SPAN  Parent span: validateOrder started.
+03/19/2026 06:00:17  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=abcdef0123456789abcdef01234567  TRC_SPAN  Child span: checkInventory created.
+03/19/2026 06:00:20  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=abcdef0123456789abcdef01234567  TRC_EVT  Inventory check completed - SKU-A100: available.
+03/19/2026 06:00:21  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=abcdef0123456789abcdef01234567  TRC_END  Child span ended - duration: 5ms.
+03/19/2026 06:00:22  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_SPAN  Customer validation: verifyCreditLimit.
+03/19/2026 06:00:25  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=fedcba9876543210fedcba9876543210  TRC_SPAN  DB query span: SELECT credit_limit FROM customer.
+03/19/2026 06:00:27  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=fedcba9876543210fedcba9876543210  TRC_EVT  Query returned: credit_limit=50000.00.
+03/19/2026 06:00:28  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=fedcba9876543210fedcba9876543210  TRC_END  DB span ended - duration: 6ms.
+03/19/2026 06:00:30  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_EVT  Credit check passed: required 15000.00 <= limit 50000.00.
+03/19/2026 06:00:35  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_SPAN  Reserve inventory span started.
+03/19/2026 06:00:40  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_EVT  Inventory reserved: SKU-A100 qty=50.
+03/19/2026 06:00:41  TRC  012345/USER/TRC500R  trace_id=0123456789abcdef0123456789abcdef  span_id=0123456789abcdef  TRC_END  Parent span ended - total duration: 26ms.
+03/19/2026 08:30:00  TRC  012346/USER/TRC500R  trace_id=9876543210abcdef1234567890abcdef  span_id=1234567890abcdef1234567890abcdef  TRC_START  Trace initiated for customer update CUST-001.
+03/19/2026 08:30:01  TRC  012346/USER/TRC500R  trace_id=9876543210abcdef1234567890abcdef  span_id=1234567890abcdef1234567890abcdef  TRC_SPAN  validateCustomerData started.
+03/19/2026 08:30:03  TRC  012346/USER/TRC500R  trace_id=9876543210abcdef1234567890abcdef  span_id=1234567890abcdef1234567890abcdef  TRC_ERR  Validation error: invalid zip code format.
+03/19/2026 08:30:04  TRC  012346/USER/TRC500R  trace_id=9876543210abcdef1234567890abcdef  span_id=1234567890abcdef1234567890abcdef  TRC_END  Span ended with error - duration: 4ms.
+03/19/2026 11:00:00  TRC  012347/USER/TRC500R  trace_id=abcdef0123456789abcdef0123456789  span_id=abcdef0123456789abcdef0123456789  TRC_START  Batch job trace: ORDERS_BATCH_001.
+03/19/2026 11:00:01  TRC  012347/USER/TRC500R  trace_id=abcdef0123456789abcdef0123456789  span_id=abcdef0123456789abcdef0123456789  TRC_EVT  Processing 500 orders in batch.
+03/19/2026 14:00:00  TRC  012348/USER/TRC500R  trace_id=11112222333344445555666677778888  span_id=0000000011111111  TRC_START  Performance trace started for job PAY500R.
+03/19/2026 14:00:01  TRC  012348/USER/TRC500R  trace_id=11112222333344445555666677778888  span_id=0000000011111111  TRC_DATA  Thread pool: active=8, max=16, queue=25.
+03/19/2026 14:00:05  TRC  012348/USER/TRC500R  trace_id=11112222333344445555666677778888  span_id=3333333344444444  TRC_DATA  Connection pool: borrowed=3, idle=7, wait=0.
+03/19/2026 14:00:10  TRC  012348/USER/TRC500R  trace_id=11112222333344445555666677778888  span_id=5555555566666666  TRC_EVT  Batch processing: 100 records per commit.
+03/19/2026 14:00:30  TRC  012348/USER/TRC500R  trace_id=11112222333344445555666677778888  span_id=7777777788888888  TRC_SUM  Batch complete: 1000 records in 30s, error rate: 0.1%.
+03/19/2026 18:00:00  TRC  012349/USER/TRC500R  trace_id=aaaabbbbccccddddeeeeffff00001111  span_id=22222333344445555  TRC_START  Distributed trace for invoice INV-2026-0319-5678.
+03/19/2026 18:00:05  TRC  012349/USER/TRC500R  trace_id=aaaabbbbccccddddeeeeffff00001111  span_id=22222333344445555  TRC_SPAN  Calculate totals span started.
+03/19/2026 18:00:15  TRC  012349/USER/TRC500R  trace_id=aaaabbbbccccddddeeeeffff00001111  span_id=66666777788889999  TRC_SPAN  Apply discounts span started.
+03/19/2026 18:00:20  TRC  012349/USER/TRC500R  trace_id=aaaabbbbccccddddeeeeffff00001111  span_id=66666777788889999  TRC_EVT  Discount applied: 10% for customer TYPE-A.
+03/19/2026 18:00:25  TRC  012349/USER/TRC500R  trace_id=aaaabbbbccccddddeeeeffff00001111  span_id=aaaaaabbbbbbcccccc  TRC_SUM  Invoice total: 15000.00 USD, tax: 1125.00.
+03/19/2026 22:00:00  TRC  012350/USER/TRC500R  trace_id=bbbbccccddddeeeeffff000011112222  span_id=22222333344445555  TRC_START  Night batch trace: ORDERS_NIGHT_001.
+03/19/2026 22:00:01  TRC  012350/USER/TRC500R  trace_id=bbbbccccddddeeeeffff000011112222  span_id=22222333344445555  TRC_EVT  Starting processing for 2500 orders.

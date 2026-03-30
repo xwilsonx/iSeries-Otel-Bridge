@@ -1,0 +1,6 @@
+{"timestamp":"2023-10-27T10:00:00.000Z","level":"INFO","logger":"com.myapp.Application","message":"Application startup completed","thread":"main","version":"2.1.0"}
+{"timestamp":"2023-10-27T10:00:01.123Z","level":"DEBUG","logger":"com.myapp.db.ConnectionPool","message":"Pool initialized","thread":"pool-init-1","connections":10,"maxWait":5000}
+{"timestamp":"2023-10-27T10:00:05.456Z","level":"INFO","logger":"com.myapp.api.UserController","message":"User authenticated","thread":"http-nio-8080-exec-1","userId":"user-12345","remoteAddr":"192.168.1.100","method":"POST","path":"/api/login"}
+{"timestamp":"2023-10-27T10:00:10.789Z","level":"WARN","logger":"com.myapp.cache.RedisClient","message":"Cache miss rate exceeding threshold","thread":"cache-monitor-1","missRate":0.45,"threshold":0.30}
+{"timestamp":"2023-10-27T10:00:15.012Z","level":"ERROR","logger":"com.myapp.service.PaymentService","message":"Payment processing failed","thread":"http-nio-8080-exec-3","errorCode":"GW_TIMEOUT","transactionId":"txn-98765","amount":149.99,"currency":"USD"}
+{"timestamp":"2023-10-27T10:00:20.345Z","level":"INFO","logger":"com.myapp.scheduler.ReportJob","message":"Daily report generation started","thread":"scheduler-1","reportType":"sales","period":"2023-10-26"}

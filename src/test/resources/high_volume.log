@@ -1,0 +1,614 @@
+2023-10-27 10:00:00 WARN  [UserAuth] Rate limit threshold reached: 346/min
+2023-10-27 10:03:01 TRACE [CacheLayer] Rate limit threshold reached: 763/min
+2023-10-27 10:06:02 WARN  [InventoryManager] Request processed successfully in 152ms
+2023-10-27 10:09:03 DEBUG [UserAuth] Cache hit ratio: 448.00%
+2023-10-27 10:12:04 ERROR [LoadBalancer] Request processed successfully in 378ms
+java.lang.RuntimeException: Simulated error in LoadBalancer
+	at com.iseries.app.LoadBalancer.process(LoadBalancer.java:199)
+	at com.iseries.app.Main.dispatch(Main.java:185)
+2023-10-27 10:15:05 WARN  [InventoryManager] Queue depth: 943 messages pending
+2023-10-27 10:18:06 WARN  [CacheLayer] Request processed successfully in 693ms
+2023-10-27 10:21:07 ERROR [CacheLayer] Retrying operation, attempt 801/3
+2023-10-27 10:24:08 DEBUG [PaymentGateway] Queue depth: 810 messages pending
+2023-10-27 10:27:09 TRACE [InventoryManager] Queue depth: 714 messages pending
+2023-10-27 10:30:10 WARN  [OrderService] Retrying operation, attempt 59/3
+2023-10-27 10:33:11 INFO  [LoadBalancer] Processing batch item 620/38
+2023-10-27 10:36:12 INFO  [DatabasePool] Memory usage: 550MB / 62MB
+2023-10-27 10:39:13 WARN  [DatabasePool] Retrying operation, attempt 447/3
+2023-10-27 10:42:14 ERROR [DatabasePool] Rate limit threshold reached: 261/min
+2023-10-27 10:45:15 INFO  [LoadBalancer] Memory usage: 823MB / 86MB
+2023-10-27 10:48:16 WARN  [DatabasePool] Transaction 968 completed
+2023-10-27 10:51:17 DEBUG [MessageBroker] Retrying operation, attempt 563/3
+2023-10-27 10:54:18 DEBUG [MessageBroker] Processing batch item 599/28
+2023-10-27 10:57:19 INFO  [PaymentGateway] Retrying operation, attempt 574/3
+2023-10-27 10:00:20 ERROR [CacheLayer] Health check passed for subsystem 208
+2023-10-27 10:03:21 ERROR [LoadBalancer] Retrying operation, attempt 45/3
+2023-10-27 10:06:22 INFO  [CacheLayer] Rate limit threshold reached: 62/min
+2023-10-27 10:09:23 ERROR [InventoryManager] Queue depth: 401 messages pending
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:166)
+	at com.iseries.app.Main.dispatch(Main.java:106)
+2023-10-27 10:12:24 WARN  [UserAuth] Cache hit ratio: 508.00%
+2023-10-27 10:15:25 TRACE [LoadBalancer] Retrying operation, attempt 656/3
+2023-10-27 10:18:26 ERROR [PaymentGateway] Transaction 250 completed
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:308)
+	at com.iseries.app.Main.dispatch(Main.java:182)
+2023-10-27 10:21:27 TRACE [DatabasePool] Health check passed for subsystem 821
+2023-10-27 10:24:28 INFO  [LoadBalancer] Cache hit ratio: 508.00%
+2023-10-27 10:27:29 DEBUG [MessageBroker] Connection pool stats: active=563 idle=91 total=2
+2023-10-27 10:30:30 INFO  [MessageBroker] Request processed successfully in 672ms
+2023-10-27 10:33:31 ERROR [PaymentGateway] Health check passed for subsystem 664
+2023-10-27 10:36:32 ERROR [InventoryManager] Transaction 295 completed
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:324)
+	at com.iseries.app.Main.dispatch(Main.java:155)
+2023-10-27 10:39:33 ERROR [InventoryManager] Rate limit threshold reached: 349/min
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:353)
+	at com.iseries.app.Main.dispatch(Main.java:23)
+2023-10-27 10:42:34 TRACE [OrderService] Rate limit threshold reached: 571/min
+2023-10-27 10:45:35 DEBUG [LoadBalancer] Request processed successfully in 458ms
+2023-10-27 10:48:36 ERROR [InventoryManager] Memory usage: 931MB / 92MB
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:246)
+	at com.iseries.app.Main.dispatch(Main.java:139)
+2023-10-27 10:51:37 DEBUG [UserAuth] Rate limit threshold reached: 814/min
+2023-10-27 10:54:38 ERROR [DatabasePool] Connection pool stats: active=787 idle=92 total=56
+java.lang.RuntimeException: Simulated error in DatabasePool
+	at com.iseries.app.DatabasePool.process(DatabasePool.java:188)
+	at com.iseries.app.Main.dispatch(Main.java:15)
+2023-10-27 10:57:39 WARN  [MessageBroker] Connection pool stats: active=999 idle=4 total=6
+2023-10-27 10:00:40 INFO  [PaymentGateway] Health check passed for subsystem 698
+2023-10-27 10:03:41 TRACE [UserAuth] Cache hit ratio: 513.00%
+2023-10-27 10:06:42 INFO  [OrderService] Retrying operation, attempt 883/3
+2023-10-27 10:09:43 ERROR [UserAuth] Request processed successfully in 670ms
+java.lang.RuntimeException: Simulated error in UserAuth
+	at com.iseries.app.UserAuth.process(UserAuth.java:487)
+	at com.iseries.app.Main.dispatch(Main.java:179)
+2023-10-27 10:12:44 WARN  [OrderService] Transaction 811 completed
+2023-10-27 10:15:45 INFO  [CacheLayer] Request processed successfully in 949ms
+2023-10-27 10:18:46 ERROR [MessageBroker] Cache hit ratio: 164.00%
+java.lang.RuntimeException: Simulated error in MessageBroker
+	at com.iseries.app.MessageBroker.process(MessageBroker.java:490)
+	at com.iseries.app.Main.dispatch(Main.java:17)
+2023-10-27 10:21:47 WARN  [LoadBalancer] Health check passed for subsystem 850
+2023-10-27 10:24:48 INFO  [OrderService] Cache hit ratio: 349.00%
+2023-10-27 10:27:49 TRACE [MessageBroker] Health check passed for subsystem 403
+2023-10-27 10:30:50 DEBUG [MessageBroker] Transaction 610 completed
+2023-10-27 10:33:51 WARN  [UserAuth] Rate limit threshold reached: 681/min
+2023-10-27 10:36:52 INFO  [OrderService] Transaction 870 completed
+2023-10-27 10:39:53 DEBUG [DatabasePool] Health check passed for subsystem 168
+2023-10-27 10:42:54 INFO  [UserAuth] Rate limit threshold reached: 439/min
+2023-10-27 10:45:55 WARN  [PaymentGateway] Health check passed for subsystem 499
+2023-10-27 10:48:56 ERROR [UserAuth] Retrying operation, attempt 394/3
+java.lang.RuntimeException: Simulated error in UserAuth
+	at com.iseries.app.UserAuth.process(UserAuth.java:363)
+	at com.iseries.app.Main.dispatch(Main.java:68)
+2023-10-27 10:51:57 DEBUG [InventoryManager] Cache hit ratio: 990.00%
+2023-10-27 10:54:58 WARN  [InventoryManager] Retrying operation, attempt 584/3
+2023-10-27 10:57:59 ERROR [OrderService] Health check passed for subsystem 167
+2023-10-27 10:00:00 DEBUG [UserAuth] Cache hit ratio: 135.00%
+2023-10-27 10:03:01 ERROR [OrderService] Queue depth: 322 messages pending
+java.lang.RuntimeException: Simulated error in OrderService
+	at com.iseries.app.OrderService.process(OrderService.java:376)
+	at com.iseries.app.Main.dispatch(Main.java:92)
+2023-10-27 10:06:02 TRACE [CacheLayer] Queue depth: 149 messages pending
+2023-10-27 10:09:03 DEBUG [MessageBroker] Transaction 543 completed
+2023-10-27 10:12:04 ERROR [DatabasePool] Cache hit ratio: 225.00%
+2023-10-27 10:15:05 DEBUG [PaymentGateway] Health check passed for subsystem 295
+2023-10-27 10:18:06 INFO  [LoadBalancer] Rate limit threshold reached: 532/min
+2023-10-27 10:21:07 ERROR [CacheLayer] Processing batch item 516/81
+java.lang.RuntimeException: Simulated error in CacheLayer
+	at com.iseries.app.CacheLayer.process(CacheLayer.java:89)
+	at com.iseries.app.Main.dispatch(Main.java:40)
+2023-10-27 10:24:08 ERROR [LoadBalancer] Retrying operation, attempt 948/3
+2023-10-27 10:27:09 ERROR [UserAuth] Queue depth: 796 messages pending
+java.lang.RuntimeException: Simulated error in UserAuth
+	at com.iseries.app.UserAuth.process(UserAuth.java:150)
+	at com.iseries.app.Main.dispatch(Main.java:120)
+2023-10-27 10:30:10 ERROR [DatabasePool] Rate limit threshold reached: 636/min
+2023-10-27 10:33:11 TRACE [InventoryManager] Cache hit ratio: 664.00%
+2023-10-27 10:36:12 INFO  [PaymentGateway] Queue depth: 841 messages pending
+2023-10-27 10:39:13 TRACE [LoadBalancer] Transaction 438 completed
+2023-10-27 10:42:14 DEBUG [DatabasePool] Memory usage: 80MB / 33MB
+2023-10-27 10:45:15 ERROR [OrderService] Processing batch item 359/8
+java.lang.RuntimeException: Simulated error in OrderService
+	at com.iseries.app.OrderService.process(OrderService.java:366)
+	at com.iseries.app.Main.dispatch(Main.java:53)
+2023-10-27 10:48:16 WARN  [LoadBalancer] Queue depth: 469 messages pending
+2023-10-27 10:51:17 ERROR [CacheLayer] Request processed successfully in 216ms
+2023-10-27 10:54:18 INFO  [InventoryManager] Queue depth: 360 messages pending
+2023-10-27 10:57:19 INFO  [UserAuth] Rate limit threshold reached: 744/min
+2023-10-27 10:00:20 TRACE [PaymentGateway] Queue depth: 303 messages pending
+2023-10-27 10:03:21 DEBUG [MessageBroker] Rate limit threshold reached: 900/min
+2023-10-27 10:06:22 WARN  [DatabasePool] Retrying operation, attempt 847/3
+2023-10-27 10:09:23 ERROR [PaymentGateway] Memory usage: 854MB / 88MB
+2023-10-27 10:12:24 INFO  [UserAuth] Memory usage: 218MB / 83MB
+2023-10-27 10:15:25 TRACE [UserAuth] Memory usage: 596MB / 71MB
+2023-10-27 10:18:26 ERROR [PaymentGateway] Processing batch item 772/6
+2023-10-27 10:21:27 TRACE [InventoryManager] Request processed successfully in 385ms
+2023-10-27 10:24:28 WARN  [LoadBalancer] Retrying operation, attempt 107/3
+2023-10-27 10:27:29 WARN  [DatabasePool] Rate limit threshold reached: 74/min
+2023-10-27 10:30:30 INFO  [LoadBalancer] Memory usage: 419MB / 94MB
+2023-10-27 10:33:31 TRACE [OrderService] Queue depth: 90 messages pending
+2023-10-27 10:36:32 INFO  [PaymentGateway] Connection pool stats: active=541 idle=99 total=32
+2023-10-27 10:39:33 TRACE [DatabasePool] Retrying operation, attempt 800/3
+2023-10-27 10:42:34 DEBUG [CacheLayer] Rate limit threshold reached: 367/min
+2023-10-27 10:45:35 DEBUG [OrderService] Health check passed for subsystem 740
+2023-10-27 10:48:36 TRACE [PaymentGateway] Processing batch item 16/75
+2023-10-27 10:51:37 INFO  [CacheLayer] Cache hit ratio: 603.00%
+2023-10-27 10:54:38 TRACE [MessageBroker] Processing batch item 437/56
+2023-10-27 10:57:39 DEBUG [OrderService] Cache hit ratio: 572.00%
+2023-10-27 10:00:40 WARN  [PaymentGateway] Connection pool stats: active=788 idle=83 total=41
+2023-10-27 10:03:41 INFO  [MessageBroker] Request processed successfully in 548ms
+2023-10-27 10:06:42 DEBUG [UserAuth] Request processed successfully in 296ms
+2023-10-27 10:09:43 DEBUG [DatabasePool] Retrying operation, attempt 314/3
+2023-10-27 10:12:44 WARN  [MessageBroker] Connection pool stats: active=744 idle=29 total=92
+2023-10-27 10:15:45 INFO  [MessageBroker] Processing batch item 818/5
+2023-10-27 10:18:46 ERROR [OrderService] Processing batch item 637/4
+2023-10-27 10:21:47 ERROR [PaymentGateway] Rate limit threshold reached: 614/min
+2023-10-27 10:24:48 INFO  [CacheLayer] Connection pool stats: active=851 idle=8 total=13
+2023-10-27 10:27:49 DEBUG [LoadBalancer] Cache hit ratio: 126.00%
+2023-10-27 10:30:50 ERROR [LoadBalancer] Request processed successfully in 564ms
+2023-10-27 10:33:51 INFO  [OrderService] Cache hit ratio: 474.00%
+2023-10-27 10:36:52 ERROR [MessageBroker] Rate limit threshold reached: 55/min
+2023-10-27 10:39:53 INFO  [PaymentGateway] Retrying operation, attempt 899/3
+2023-10-27 10:42:54 WARN  [LoadBalancer] Request processed successfully in 459ms
+2023-10-27 10:45:55 TRACE [UserAuth] Transaction 761 completed
+2023-10-27 10:48:56 TRACE [OrderService] Health check passed for subsystem 828
+2023-10-27 10:51:57 INFO  [CacheLayer] Cache hit ratio: 650.00%
+2023-10-27 10:54:58 INFO  [MessageBroker] Cache hit ratio: 139.00%
+2023-10-27 10:57:59 ERROR [OrderService] Health check passed for subsystem 773
+2023-10-27 10:00:00 DEBUG [LoadBalancer] Retrying operation, attempt 428/3
+2023-10-27 10:03:01 INFO  [LoadBalancer] Request processed successfully in 811ms
+2023-10-27 10:06:02 WARN  [OrderService] Transaction 337 completed
+2023-10-27 10:09:03 TRACE [MessageBroker] Queue depth: 942 messages pending
+2023-10-27 10:12:04 TRACE [UserAuth] Rate limit threshold reached: 85/min
+2023-10-27 10:15:05 DEBUG [InventoryManager] Cache hit ratio: 979.00%
+2023-10-27 10:18:06 WARN  [OrderService] Memory usage: 584MB / 69MB
+2023-10-27 10:21:07 INFO  [LoadBalancer] Transaction 312 completed
+2023-10-27 10:24:08 DEBUG [CacheLayer] Rate limit threshold reached: 455/min
+2023-10-27 10:27:09 DEBUG [UserAuth] Retrying operation, attempt 312/3
+2023-10-27 10:30:10 DEBUG [OrderService] Health check passed for subsystem 404
+2023-10-27 10:33:11 ERROR [InventoryManager] Request processed successfully in 942ms
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:72)
+	at com.iseries.app.Main.dispatch(Main.java:160)
+2023-10-27 10:36:12 ERROR [OrderService] Request processed successfully in 868ms
+2023-10-27 10:39:13 DEBUG [UserAuth] Processing batch item 838/100
+2023-10-27 10:42:14 INFO  [MessageBroker] Memory usage: 769MB / 58MB
+2023-10-27 10:45:15 INFO  [InventoryManager] Retrying operation, attempt 375/3
+2023-10-27 10:48:16 DEBUG [LoadBalancer] Memory usage: 746MB / 57MB
+2023-10-27 10:51:17 INFO  [LoadBalancer] Cache hit ratio: 62.00%
+2023-10-27 10:54:18 TRACE [OrderService] Processing batch item 609/96
+2023-10-27 10:57:19 TRACE [LoadBalancer] Health check passed for subsystem 402
+2023-10-27 10:00:20 DEBUG [OrderService] Processing batch item 272/92
+2023-10-27 10:03:21 TRACE [InventoryManager] Cache hit ratio: 984.00%
+2023-10-27 10:06:22 DEBUG [MessageBroker] Rate limit threshold reached: 490/min
+2023-10-27 10:09:23 DEBUG [LoadBalancer] Cache hit ratio: 888.00%
+2023-10-27 10:12:24 INFO  [MessageBroker] Memory usage: 495MB / 69MB
+2023-10-27 10:15:25 ERROR [LoadBalancer] Retrying operation, attempt 999/3
+2023-10-27 10:18:26 WARN  [MessageBroker] Retrying operation, attempt 729/3
+2023-10-27 10:21:27 INFO  [UserAuth] Rate limit threshold reached: 346/min
+2023-10-27 10:24:28 DEBUG [DatabasePool] Health check passed for subsystem 291
+2023-10-27 10:27:29 TRACE [LoadBalancer] Health check passed for subsystem 743
+2023-10-27 10:30:30 ERROR [PaymentGateway] Request processed successfully in 263ms
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:25)
+	at com.iseries.app.Main.dispatch(Main.java:171)
+2023-10-27 10:33:31 DEBUG [DatabasePool] Rate limit threshold reached: 895/min
+2023-10-27 10:36:32 WARN  [MessageBroker] Retrying operation, attempt 175/3
+2023-10-27 10:39:33 DEBUG [InventoryManager] Transaction 697 completed
+2023-10-27 10:42:34 TRACE [DatabasePool] Retrying operation, attempt 9/3
+2023-10-27 10:45:35 WARN  [PaymentGateway] Connection pool stats: active=468 idle=83 total=18
+2023-10-27 10:48:36 TRACE [OrderService] Rate limit threshold reached: 449/min
+2023-10-27 10:51:37 TRACE [LoadBalancer] Request processed successfully in 974ms
+2023-10-27 10:54:38 INFO  [PaymentGateway] Queue depth: 757 messages pending
+2023-10-27 10:57:39 WARN  [UserAuth] Health check passed for subsystem 710
+2023-10-27 10:00:40 WARN  [CacheLayer] Rate limit threshold reached: 153/min
+2023-10-27 10:03:41 TRACE [MessageBroker] Processing batch item 431/99
+2023-10-27 10:06:42 INFO  [InventoryManager] Transaction 327 completed
+2023-10-27 10:09:43 WARN  [LoadBalancer] Queue depth: 30 messages pending
+2023-10-27 10:12:44 INFO  [DatabasePool] Health check passed for subsystem 923
+2023-10-27 10:15:45 TRACE [CacheLayer] Health check passed for subsystem 116
+2023-10-27 10:18:46 ERROR [MessageBroker] Health check passed for subsystem 291
+2023-10-27 10:21:47 DEBUG [DatabasePool] Processing batch item 433/5
+2023-10-27 10:24:48 INFO  [OrderService] Queue depth: 334 messages pending
+2023-10-27 10:27:49 INFO  [PaymentGateway] Retrying operation, attempt 415/3
+2023-10-27 10:30:50 ERROR [InventoryManager] Memory usage: 928MB / 77MB
+2023-10-27 10:33:51 ERROR [UserAuth] Processing batch item 431/7
+java.lang.RuntimeException: Simulated error in UserAuth
+	at com.iseries.app.UserAuth.process(UserAuth.java:491)
+	at com.iseries.app.Main.dispatch(Main.java:141)
+2023-10-27 10:36:52 WARN  [PaymentGateway] Retrying operation, attempt 450/3
+2023-10-27 10:39:53 WARN  [InventoryManager] Transaction 1 completed
+2023-10-27 10:42:54 ERROR [CacheLayer] Cache hit ratio: 234.00%
+2023-10-27 10:45:55 WARN  [UserAuth] Retrying operation, attempt 991/3
+2023-10-27 10:48:56 WARN  [InventoryManager] Rate limit threshold reached: 849/min
+2023-10-27 10:51:57 INFO  [CacheLayer] Request processed successfully in 435ms
+2023-10-27 10:54:58 WARN  [OrderService] Transaction 819 completed
+2023-10-27 10:57:59 INFO  [LoadBalancer] Health check passed for subsystem 989
+2023-10-27 10:00:00 TRACE [MessageBroker] Rate limit threshold reached: 510/min
+2023-10-27 10:03:01 DEBUG [DatabasePool] Request processed successfully in 624ms
+2023-10-27 10:06:02 TRACE [OrderService] Retrying operation, attempt 336/3
+2023-10-27 10:09:03 TRACE [MessageBroker] Rate limit threshold reached: 815/min
+2023-10-27 10:12:04 DEBUG [LoadBalancer] Processing batch item 820/89
+2023-10-27 10:15:05 WARN  [OrderService] Processing batch item 171/19
+2023-10-27 10:18:06 DEBUG [OrderService] Connection pool stats: active=932 idle=84 total=8
+2023-10-27 10:21:07 ERROR [OrderService] Queue depth: 217 messages pending
+2023-10-27 10:24:08 WARN  [InventoryManager] Memory usage: 269MB / 21MB
+2023-10-27 10:27:09 WARN  [PaymentGateway] Transaction 416 completed
+2023-10-27 10:30:10 TRACE [MessageBroker] Transaction 491 completed
+2023-10-27 10:33:11 WARN  [MessageBroker] Retrying operation, attempt 743/3
+2023-10-27 10:36:12 DEBUG [InventoryManager] Request processed successfully in 946ms
+2023-10-27 10:39:13 WARN  [InventoryManager] Connection pool stats: active=829 idle=42 total=43
+2023-10-27 10:42:14 INFO  [OrderService] Processing batch item 938/87
+2023-10-27 10:45:15 DEBUG [DatabasePool] Processing batch item 177/62
+2023-10-27 10:48:16 DEBUG [InventoryManager] Connection pool stats: active=967 idle=18 total=96
+2023-10-27 10:51:17 ERROR [CacheLayer] Processing batch item 189/49
+2023-10-27 10:54:18 INFO  [UserAuth] Cache hit ratio: 433.00%
+2023-10-27 10:57:19 TRACE [InventoryManager] Memory usage: 860MB / 45MB
+2023-10-27 11:00:20 INFO  [DatabasePool] Health check passed for subsystem 616
+2023-10-27 11:03:21 DEBUG [LoadBalancer] Cache hit ratio: 190.00%
+2023-10-27 11:06:22 ERROR [InventoryManager] Processing batch item 359/37
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:475)
+	at com.iseries.app.Main.dispatch(Main.java:82)
+2023-10-27 11:09:23 INFO  [CacheLayer] Connection pool stats: active=398 idle=12 total=32
+2023-10-27 11:12:24 DEBUG [DatabasePool] Request processed successfully in 25ms
+2023-10-27 11:15:25 TRACE [UserAuth] Transaction 848 completed
+2023-10-27 11:18:26 DEBUG [InventoryManager] Transaction 209 completed
+2023-10-27 11:21:27 WARN  [OrderService] Connection pool stats: active=948 idle=100 total=54
+2023-10-27 11:24:28 TRACE [MessageBroker] Queue depth: 423 messages pending
+2023-10-27 11:27:29 DEBUG [InventoryManager] Connection pool stats: active=826 idle=51 total=16
+2023-10-27 11:30:30 ERROR [OrderService] Cache hit ratio: 801.00%
+2023-10-27 11:33:31 DEBUG [LoadBalancer] Memory usage: 680MB / 17MB
+2023-10-27 11:36:32 WARN  [LoadBalancer] Memory usage: 518MB / 9MB
+2023-10-27 11:39:33 DEBUG [LoadBalancer] Queue depth: 763 messages pending
+2023-10-27 11:42:34 WARN  [UserAuth] Connection pool stats: active=465 idle=40 total=75
+2023-10-27 11:45:35 ERROR [CacheLayer] Rate limit threshold reached: 988/min
+java.lang.RuntimeException: Simulated error in CacheLayer
+	at com.iseries.app.CacheLayer.process(CacheLayer.java:403)
+	at com.iseries.app.Main.dispatch(Main.java:111)
+2023-10-27 11:48:36 ERROR [UserAuth] Cache hit ratio: 386.00%
+java.lang.RuntimeException: Simulated error in UserAuth
+	at com.iseries.app.UserAuth.process(UserAuth.java:378)
+	at com.iseries.app.Main.dispatch(Main.java:185)
+2023-10-27 11:51:37 WARN  [CacheLayer] Memory usage: 576MB / 69MB
+2023-10-27 11:54:38 ERROR [OrderService] Memory usage: 610MB / 55MB
+2023-10-27 11:57:39 DEBUG [InventoryManager] Queue depth: 884 messages pending
+2023-10-27 11:00:40 INFO  [PaymentGateway] Retrying operation, attempt 766/3
+2023-10-27 11:03:41 WARN  [UserAuth] Rate limit threshold reached: 714/min
+2023-10-27 11:06:42 ERROR [MessageBroker] Health check passed for subsystem 212
+2023-10-27 11:09:43 DEBUG [LoadBalancer] Processing batch item 993/31
+2023-10-27 11:12:44 TRACE [InventoryManager] Transaction 985 completed
+2023-10-27 11:15:45 INFO  [UserAuth] Retrying operation, attempt 665/3
+2023-10-27 11:18:46 ERROR [LoadBalancer] Memory usage: 647MB / 64MB
+java.lang.RuntimeException: Simulated error in LoadBalancer
+	at com.iseries.app.LoadBalancer.process(LoadBalancer.java:207)
+	at com.iseries.app.Main.dispatch(Main.java:119)
+2023-10-27 11:21:47 ERROR [CacheLayer] Rate limit threshold reached: 281/min
+java.lang.RuntimeException: Simulated error in CacheLayer
+	at com.iseries.app.CacheLayer.process(CacheLayer.java:406)
+	at com.iseries.app.Main.dispatch(Main.java:52)
+2023-10-27 11:24:48 WARN  [MessageBroker] Connection pool stats: active=479 idle=89 total=49
+2023-10-27 11:27:49 WARN  [MessageBroker] Connection pool stats: active=25 idle=77 total=29
+2023-10-27 11:30:50 WARN  [DatabasePool] Cache hit ratio: 182.00%
+2023-10-27 11:33:51 ERROR [LoadBalancer] Cache hit ratio: 251.00%
+2023-10-27 11:36:52 ERROR [MessageBroker] Transaction 372 completed
+2023-10-27 11:39:53 INFO  [CacheLayer] Cache hit ratio: 697.00%
+2023-10-27 11:42:54 DEBUG [PaymentGateway] Transaction 735 completed
+2023-10-27 11:45:55 ERROR [PaymentGateway] Cache hit ratio: 876.00%
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:328)
+	at com.iseries.app.Main.dispatch(Main.java:130)
+2023-10-27 11:48:56 WARN  [OrderService] Connection pool stats: active=87 idle=57 total=75
+2023-10-27 11:51:57 WARN  [DatabasePool] Memory usage: 198MB / 62MB
+2023-10-27 11:54:58 TRACE [DatabasePool] Memory usage: 324MB / 89MB
+2023-10-27 11:57:59 ERROR [PaymentGateway] Processing batch item 745/11
+2023-10-27 11:00:00 WARN  [DatabasePool] Cache hit ratio: 857.00%
+2023-10-27 11:03:01 INFO  [UserAuth] Retrying operation, attempt 262/3
+2023-10-27 11:06:02 DEBUG [DatabasePool] Rate limit threshold reached: 148/min
+2023-10-27 11:09:03 DEBUG [InventoryManager] Cache hit ratio: 569.00%
+2023-10-27 11:12:04 INFO  [InventoryManager] Rate limit threshold reached: 796/min
+2023-10-27 11:15:05 ERROR [InventoryManager] Connection pool stats: active=405 idle=77 total=97
+2023-10-27 11:18:06 INFO  [LoadBalancer] Request processed successfully in 684ms
+2023-10-27 11:21:07 INFO  [MessageBroker] Request processed successfully in 744ms
+2023-10-27 11:24:08 INFO  [DatabasePool] Queue depth: 544 messages pending
+2023-10-27 11:27:09 ERROR [DatabasePool] Cache hit ratio: 369.00%
+2023-10-27 11:30:10 ERROR [PaymentGateway] Request processed successfully in 709ms
+2023-10-27 11:33:11 ERROR [CacheLayer] Processing batch item 896/54
+2023-10-27 11:36:12 DEBUG [LoadBalancer] Retrying operation, attempt 188/3
+2023-10-27 11:39:13 ERROR [CacheLayer] Memory usage: 297MB / 68MB
+2023-10-27 11:42:14 WARN  [UserAuth] Cache hit ratio: 138.00%
+2023-10-27 11:45:15 WARN  [MessageBroker] Memory usage: 736MB / 88MB
+2023-10-27 11:48:16 DEBUG [CacheLayer] Transaction 746 completed
+2023-10-27 11:51:17 INFO  [MessageBroker] Queue depth: 972 messages pending
+2023-10-27 11:54:18 WARN  [CacheLayer] Health check passed for subsystem 8
+2023-10-27 11:57:19 ERROR [UserAuth] Transaction 924 completed
+2023-10-27 11:00:20 ERROR [LoadBalancer] Connection pool stats: active=344 idle=87 total=64
+2023-10-27 11:03:21 DEBUG [InventoryManager] Processing batch item 807/48
+2023-10-27 11:06:22 ERROR [DatabasePool] Retrying operation, attempt 276/3
+2023-10-27 11:09:23 WARN  [MessageBroker] Rate limit threshold reached: 890/min
+2023-10-27 11:12:24 WARN  [CacheLayer] Transaction 217 completed
+2023-10-27 11:15:25 ERROR [PaymentGateway] Rate limit threshold reached: 177/min
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:295)
+	at com.iseries.app.Main.dispatch(Main.java:153)
+2023-10-27 11:18:26 TRACE [UserAuth] Health check passed for subsystem 784
+2023-10-27 11:21:27 ERROR [InventoryManager] Queue depth: 486 messages pending
+2023-10-27 11:24:28 WARN  [InventoryManager] Memory usage: 392MB / 77MB
+2023-10-27 11:27:29 WARN  [UserAuth] Health check passed for subsystem 333
+2023-10-27 11:30:30 TRACE [OrderService] Request processed successfully in 625ms
+2023-10-27 11:33:31 TRACE [InventoryManager] Queue depth: 541 messages pending
+2023-10-27 11:36:32 TRACE [MessageBroker] Processing batch item 461/99
+2023-10-27 11:39:33 TRACE [CacheLayer] Memory usage: 633MB / 47MB
+2023-10-27 11:42:34 WARN  [UserAuth] Rate limit threshold reached: 609/min
+2023-10-27 11:45:35 INFO  [CacheLayer] Memory usage: 671MB / 81MB
+2023-10-27 11:48:36 WARN  [PaymentGateway] Rate limit threshold reached: 350/min
+2023-10-27 11:51:37 DEBUG [LoadBalancer] Queue depth: 563 messages pending
+2023-10-27 11:54:38 WARN  [MessageBroker] Queue depth: 443 messages pending
+2023-10-27 11:57:39 DEBUG [CacheLayer] Request processed successfully in 401ms
+2023-10-27 11:00:40 ERROR [LoadBalancer] Retrying operation, attempt 284/3
+2023-10-27 11:03:41 ERROR [MessageBroker] Rate limit threshold reached: 460/min
+2023-10-27 11:06:42 ERROR [PaymentGateway] Connection pool stats: active=23 idle=42 total=56
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:125)
+	at com.iseries.app.Main.dispatch(Main.java:115)
+2023-10-27 11:09:43 ERROR [PaymentGateway] Processing batch item 124/12
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:329)
+	at com.iseries.app.Main.dispatch(Main.java:43)
+2023-10-27 11:12:44 INFO  [DatabasePool] Health check passed for subsystem 872
+2023-10-27 11:15:45 WARN  [PaymentGateway] Queue depth: 347 messages pending
+2023-10-27 11:18:46 INFO  [LoadBalancer] Queue depth: 148 messages pending
+2023-10-27 11:21:47 TRACE [LoadBalancer] Processing batch item 621/18
+2023-10-27 11:24:48 ERROR [PaymentGateway] Memory usage: 923MB / 81MB
+2023-10-27 11:27:49 TRACE [UserAuth] Transaction 544 completed
+2023-10-27 11:30:50 DEBUG [PaymentGateway] Rate limit threshold reached: 381/min
+2023-10-27 11:33:51 WARN  [CacheLayer] Cache hit ratio: 965.00%
+2023-10-27 11:36:52 INFO  [MessageBroker] Rate limit threshold reached: 795/min
+2023-10-27 11:39:53 TRACE [PaymentGateway] Request processed successfully in 860ms
+2023-10-27 11:42:54 ERROR [InventoryManager] Processing batch item 342/7
+2023-10-27 11:45:55 ERROR [MessageBroker] Retrying operation, attempt 308/3
+2023-10-27 11:48:56 TRACE [DatabasePool] Memory usage: 926MB / 1MB
+2023-10-27 11:51:57 INFO  [UserAuth] Transaction 53 completed
+2023-10-27 11:54:58 INFO  [InventoryManager] Memory usage: 186MB / 5MB
+2023-10-27 11:57:59 DEBUG [OrderService] Rate limit threshold reached: 814/min
+2023-10-27 11:00:00 WARN  [CacheLayer] Request processed successfully in 494ms
+2023-10-27 11:03:01 DEBUG [PaymentGateway] Connection pool stats: active=205 idle=23 total=71
+2023-10-27 11:06:02 INFO  [CacheLayer] Cache hit ratio: 346.00%
+2023-10-27 11:09:03 ERROR [CacheLayer] Memory usage: 337MB / 20MB
+2023-10-27 11:12:04 TRACE [InventoryManager] Processing batch item 290/16
+2023-10-27 11:15:05 INFO  [MessageBroker] Queue depth: 727 messages pending
+2023-10-27 11:18:06 ERROR [MessageBroker] Cache hit ratio: 329.00%
+java.lang.RuntimeException: Simulated error in MessageBroker
+	at com.iseries.app.MessageBroker.process(MessageBroker.java:355)
+	at com.iseries.app.Main.dispatch(Main.java:58)
+2023-10-27 11:21:07 WARN  [InventoryManager] Rate limit threshold reached: 502/min
+2023-10-27 11:24:08 TRACE [InventoryManager] Connection pool stats: active=166 idle=57 total=63
+2023-10-27 11:27:09 INFO  [OrderService] Connection pool stats: active=5 idle=21 total=80
+2023-10-27 11:30:10 WARN  [PaymentGateway] Memory usage: 159MB / 75MB
+2023-10-27 11:33:11 INFO  [DatabasePool] Queue depth: 66 messages pending
+2023-10-27 11:36:12 ERROR [LoadBalancer] Request processed successfully in 821ms
+2023-10-27 11:39:13 TRACE [CacheLayer] Rate limit threshold reached: 136/min
+2023-10-27 11:42:14 WARN  [MessageBroker] Cache hit ratio: 401.00%
+2023-10-27 11:45:15 TRACE [DatabasePool] Rate limit threshold reached: 201/min
+2023-10-27 11:48:16 INFO  [InventoryManager] Processing batch item 970/79
+2023-10-27 11:51:17 ERROR [LoadBalancer] Processing batch item 987/41
+java.lang.RuntimeException: Simulated error in LoadBalancer
+	at com.iseries.app.LoadBalancer.process(LoadBalancer.java:148)
+	at com.iseries.app.Main.dispatch(Main.java:77)
+2023-10-27 11:54:18 DEBUG [OrderService] Queue depth: 857 messages pending
+2023-10-27 11:57:19 WARN  [OrderService] Cache hit ratio: 50.00%
+2023-10-27 11:00:20 ERROR [PaymentGateway] Queue depth: 911 messages pending
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:99)
+	at com.iseries.app.Main.dispatch(Main.java:26)
+2023-10-27 11:03:21 ERROR [DatabasePool] Processing batch item 711/72
+java.lang.RuntimeException: Simulated error in DatabasePool
+	at com.iseries.app.DatabasePool.process(DatabasePool.java:252)
+	at com.iseries.app.Main.dispatch(Main.java:130)
+2023-10-27 11:06:22 INFO  [LoadBalancer] Processing batch item 46/30
+2023-10-27 11:09:23 INFO  [LoadBalancer] Transaction 162 completed
+2023-10-27 11:12:24 ERROR [DatabasePool] Transaction 442 completed
+2023-10-27 11:15:25 ERROR [MessageBroker] Rate limit threshold reached: 516/min
+2023-10-27 11:18:26 WARN  [CacheLayer] Connection pool stats: active=974 idle=78 total=9
+2023-10-27 11:21:27 ERROR [OrderService] Memory usage: 227MB / 65MB
+java.lang.RuntimeException: Simulated error in OrderService
+	at com.iseries.app.OrderService.process(OrderService.java:254)
+	at com.iseries.app.Main.dispatch(Main.java:80)
+2023-10-27 11:24:28 ERROR [LoadBalancer] Connection pool stats: active=283 idle=8 total=25
+2023-10-27 11:27:29 INFO  [InventoryManager] Connection pool stats: active=540 idle=98 total=15
+2023-10-27 11:30:30 INFO  [MessageBroker] Queue depth: 463 messages pending
+2023-10-27 11:33:31 INFO  [PaymentGateway] Processing batch item 587/84
+2023-10-27 11:36:32 TRACE [MessageBroker] Retrying operation, attempt 186/3
+2023-10-27 11:39:33 INFO  [CacheLayer] Processing batch item 633/86
+2023-10-27 11:42:34 TRACE [UserAuth] Request processed successfully in 742ms
+2023-10-27 11:45:35 INFO  [DatabasePool] Memory usage: 344MB / 34MB
+2023-10-27 11:48:36 TRACE [UserAuth] Rate limit threshold reached: 123/min
+2023-10-27 11:51:37 DEBUG [DatabasePool] Connection pool stats: active=822 idle=12 total=53
+2023-10-27 11:54:38 ERROR [MessageBroker] Memory usage: 202MB / 93MB
+2023-10-27 11:57:39 WARN  [InventoryManager] Connection pool stats: active=987 idle=78 total=27
+2023-10-27 11:00:40 DEBUG [MessageBroker] Request processed successfully in 322ms
+2023-10-27 11:03:41 TRACE [LoadBalancer] Retrying operation, attempt 13/3
+2023-10-27 11:06:42 INFO  [OrderService] Health check passed for subsystem 749
+2023-10-27 11:09:43 DEBUG [InventoryManager] Rate limit threshold reached: 151/min
+2023-10-27 11:12:44 WARN  [MessageBroker] Cache hit ratio: 785.00%
+2023-10-27 11:15:45 WARN  [InventoryManager] Rate limit threshold reached: 264/min
+2023-10-27 11:18:46 ERROR [OrderService] Connection pool stats: active=42 idle=19 total=70
+java.lang.RuntimeException: Simulated error in OrderService
+	at com.iseries.app.OrderService.process(OrderService.java:238)
+	at com.iseries.app.Main.dispatch(Main.java:148)
+2023-10-27 11:21:47 INFO  [UserAuth] Health check passed for subsystem 76
+2023-10-27 11:24:48 TRACE [PaymentGateway] Rate limit threshold reached: 959/min
+2023-10-27 11:27:49 DEBUG [InventoryManager] Transaction 97 completed
+2023-10-27 11:30:50 TRACE [InventoryManager] Memory usage: 336MB / 95MB
+2023-10-27 11:33:51 ERROR [PaymentGateway] Rate limit threshold reached: 368/min
+2023-10-27 11:36:52 WARN  [DatabasePool] Transaction 830 completed
+2023-10-27 11:39:53 WARN  [CacheLayer] Connection pool stats: active=191 idle=35 total=75
+2023-10-27 11:42:54 TRACE [CacheLayer] Processing batch item 385/55
+2023-10-27 11:45:55 WARN  [LoadBalancer] Rate limit threshold reached: 315/min
+2023-10-27 11:48:56 INFO  [PaymentGateway] Queue depth: 146 messages pending
+2023-10-27 11:51:57 INFO  [PaymentGateway] Rate limit threshold reached: 791/min
+2023-10-27 11:54:58 ERROR [DatabasePool] Cache hit ratio: 938.00%
+java.lang.RuntimeException: Simulated error in DatabasePool
+	at com.iseries.app.DatabasePool.process(DatabasePool.java:279)
+	at com.iseries.app.Main.dispatch(Main.java:58)
+2023-10-27 11:57:59 DEBUG [MessageBroker] Queue depth: 977 messages pending
+2023-10-27 11:00:00 WARN  [OrderService] Queue depth: 22 messages pending
+2023-10-27 11:03:01 DEBUG [CacheLayer] Cache hit ratio: 81.00%
+2023-10-27 11:06:02 WARN  [InventoryManager] Connection pool stats: active=172 idle=98 total=43
+2023-10-27 11:09:03 TRACE [DatabasePool] Transaction 421 completed
+2023-10-27 11:12:04 DEBUG [UserAuth] Transaction 998 completed
+2023-10-27 11:15:05 TRACE [OrderService] Health check passed for subsystem 729
+2023-10-27 11:18:06 WARN  [InventoryManager] Cache hit ratio: 895.00%
+2023-10-27 11:21:07 ERROR [PaymentGateway] Connection pool stats: active=768 idle=69 total=1
+2023-10-27 11:24:08 ERROR [UserAuth] Retrying operation, attempt 579/3
+2023-10-27 11:27:09 ERROR [CacheLayer] Processing batch item 979/78
+2023-10-27 11:30:10 DEBUG [UserAuth] Retrying operation, attempt 109/3
+2023-10-27 11:33:11 INFO  [LoadBalancer] Memory usage: 980MB / 56MB
+2023-10-27 11:36:12 WARN  [LoadBalancer] Request processed successfully in 274ms
+2023-10-27 11:39:13 ERROR [PaymentGateway] Rate limit threshold reached: 447/min
+2023-10-27 11:42:14 ERROR [InventoryManager] Processing batch item 282/38
+2023-10-27 11:45:15 DEBUG [PaymentGateway] Retrying operation, attempt 42/3
+2023-10-27 11:48:16 WARN  [DatabasePool] Health check passed for subsystem 701
+2023-10-27 11:51:17 DEBUG [OrderService] Request processed successfully in 141ms
+2023-10-27 11:54:18 ERROR [PaymentGateway] Health check passed for subsystem 822
+2023-10-27 11:57:19 TRACE [PaymentGateway] Queue depth: 993 messages pending
+2023-10-27 11:00:20 INFO  [LoadBalancer] Queue depth: 358 messages pending
+2023-10-27 11:03:21 WARN  [CacheLayer] Retrying operation, attempt 922/3
+2023-10-27 11:06:22 TRACE [CacheLayer] Memory usage: 200MB / 47MB
+2023-10-27 11:09:23 WARN  [PaymentGateway] Health check passed for subsystem 698
+2023-10-27 11:12:24 TRACE [DatabasePool] Retrying operation, attempt 410/3
+2023-10-27 11:15:25 TRACE [LoadBalancer] Request processed successfully in 885ms
+2023-10-27 11:18:26 WARN  [InventoryManager] Queue depth: 840 messages pending
+2023-10-27 11:21:27 INFO  [LoadBalancer] Cache hit ratio: 917.00%
+2023-10-27 11:24:28 DEBUG [DatabasePool] Transaction 989 completed
+2023-10-27 11:27:29 DEBUG [DatabasePool] Transaction 182 completed
+2023-10-27 11:30:30 INFO  [UserAuth] Rate limit threshold reached: 741/min
+2023-10-27 11:33:31 DEBUG [DatabasePool] Memory usage: 722MB / 84MB
+2023-10-27 11:36:32 INFO  [InventoryManager] Cache hit ratio: 689.00%
+2023-10-27 11:39:33 WARN  [OrderService] Connection pool stats: active=895 idle=66 total=93
+2023-10-27 11:42:34 INFO  [PaymentGateway] Connection pool stats: active=516 idle=31 total=11
+2023-10-27 11:45:35 INFO  [PaymentGateway] Request processed successfully in 984ms
+2023-10-27 11:48:36 TRACE [LoadBalancer] Health check passed for subsystem 246
+2023-10-27 11:51:37 INFO  [DatabasePool] Rate limit threshold reached: 415/min
+2023-10-27 11:54:38 DEBUG [CacheLayer] Rate limit threshold reached: 970/min
+2023-10-27 11:57:39 INFO  [DatabasePool] Transaction 453 completed
+2023-10-27 12:00:40 INFO  [DatabasePool] Transaction 557 completed
+2023-10-27 12:03:41 WARN  [PaymentGateway] Cache hit ratio: 50.00%
+2023-10-27 12:06:42 INFO  [DatabasePool] Health check passed for subsystem 835
+2023-10-27 12:09:43 WARN  [DatabasePool] Health check passed for subsystem 808
+2023-10-27 12:12:44 TRACE [InventoryManager] Queue depth: 577 messages pending
+2023-10-27 12:15:45 INFO  [CacheLayer] Health check passed for subsystem 868
+2023-10-27 12:18:46 WARN  [MessageBroker] Transaction 954 completed
+2023-10-27 12:21:47 ERROR [OrderService] Queue depth: 391 messages pending
+2023-10-27 12:24:48 ERROR [DatabasePool] Rate limit threshold reached: 227/min
+2023-10-27 12:27:49 TRACE [PaymentGateway] Rate limit threshold reached: 204/min
+2023-10-27 12:30:50 ERROR [MessageBroker] Connection pool stats: active=59 idle=49 total=6
+2023-10-27 12:33:51 TRACE [LoadBalancer] Rate limit threshold reached: 86/min
+2023-10-27 12:36:52 WARN  [MessageBroker] Connection pool stats: active=277 idle=36 total=78
+2023-10-27 12:39:53 INFO  [MessageBroker] Request processed successfully in 97ms
+2023-10-27 12:42:54 INFO  [MessageBroker] Transaction 535 completed
+2023-10-27 12:45:55 TRACE [UserAuth] Cache hit ratio: 532.00%
+2023-10-27 12:48:56 TRACE [DatabasePool] Memory usage: 800MB / 96MB
+2023-10-27 12:51:57 DEBUG [LoadBalancer] Queue depth: 897 messages pending
+2023-10-27 12:54:58 WARN  [InventoryManager] Cache hit ratio: 628.00%
+2023-10-27 12:57:59 ERROR [UserAuth] Processing batch item 457/2
+java.lang.RuntimeException: Simulated error in UserAuth
+	at com.iseries.app.UserAuth.process(UserAuth.java:85)
+	at com.iseries.app.Main.dispatch(Main.java:107)
+2023-10-27 12:00:00 TRACE [OrderService] Connection pool stats: active=429 idle=84 total=80
+2023-10-27 12:03:01 ERROR [MessageBroker] Retrying operation, attempt 385/3
+2023-10-27 12:06:02 TRACE [InventoryManager] Processing batch item 676/20
+2023-10-27 12:09:03 ERROR [DatabasePool] Processing batch item 914/6
+2023-10-27 12:12:04 TRACE [PaymentGateway] Connection pool stats: active=937 idle=100 total=26
+2023-10-27 12:15:05 DEBUG [CacheLayer] Health check passed for subsystem 538
+2023-10-27 12:18:06 INFO  [MessageBroker] Rate limit threshold reached: 782/min
+2023-10-27 12:21:07 ERROR [CacheLayer] Connection pool stats: active=635 idle=89 total=62
+2023-10-27 12:24:08 ERROR [InventoryManager] Memory usage: 329MB / 41MB
+2023-10-27 12:27:09 DEBUG [CacheLayer] Processing batch item 593/80
+2023-10-27 12:30:10 WARN  [OrderService] Memory usage: 275MB / 82MB
+2023-10-27 12:33:11 DEBUG [UserAuth] Processing batch item 327/3
+2023-10-27 12:36:12 ERROR [InventoryManager] Transaction 141 completed
+2023-10-27 12:39:13 WARN  [LoadBalancer] Memory usage: 687MB / 59MB
+2023-10-27 12:42:14 INFO  [PaymentGateway] Rate limit threshold reached: 175/min
+2023-10-27 12:45:15 DEBUG [UserAuth] Processing batch item 683/35
+2023-10-27 12:48:16 TRACE [CacheLayer] Queue depth: 458 messages pending
+2023-10-27 12:51:17 ERROR [PaymentGateway] Cache hit ratio: 245.00%
+2023-10-27 12:54:18 ERROR [UserAuth] Memory usage: 624MB / 72MB
+2023-10-27 12:57:19 TRACE [PaymentGateway] Processing batch item 93/53
+2023-10-27 12:00:20 DEBUG [UserAuth] Request processed successfully in 818ms
+2023-10-27 12:03:21 TRACE [OrderService] Health check passed for subsystem 808
+2023-10-27 12:06:22 ERROR [CacheLayer] Health check passed for subsystem 572
+2023-10-27 12:09:23 TRACE [CacheLayer] Connection pool stats: active=665 idle=97 total=88
+2023-10-27 12:12:24 DEBUG [PaymentGateway] Connection pool stats: active=561 idle=33 total=71
+2023-10-27 12:15:25 TRACE [LoadBalancer] Queue depth: 565 messages pending
+2023-10-27 12:18:26 TRACE [CacheLayer] Rate limit threshold reached: 108/min
+2023-10-27 12:21:27 INFO  [CacheLayer] Rate limit threshold reached: 860/min
+2023-10-27 12:24:28 INFO  [DatabasePool] Transaction 514 completed
+2023-10-27 12:27:29 INFO  [LoadBalancer] Request processed successfully in 900ms
+2023-10-27 12:30:30 ERROR [UserAuth] Rate limit threshold reached: 4/min
+2023-10-27 12:33:31 TRACE [PaymentGateway] Queue depth: 149 messages pending
+2023-10-27 12:36:32 INFO  [OrderService] Connection pool stats: active=462 idle=15 total=86
+2023-10-27 12:39:33 TRACE [MessageBroker] Processing batch item 545/29
+2023-10-27 12:42:34 WARN  [MessageBroker] Rate limit threshold reached: 797/min
+2023-10-27 12:45:35 ERROR [PaymentGateway] Connection pool stats: active=405 idle=2 total=69
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:31)
+	at com.iseries.app.Main.dispatch(Main.java:171)
+2023-10-27 12:48:36 DEBUG [CacheLayer] Request processed successfully in 316ms
+2023-10-27 12:51:37 DEBUG [DatabasePool] Cache hit ratio: 180.00%
+2023-10-27 12:54:38 TRACE [CacheLayer] Connection pool stats: active=520 idle=54 total=20
+2023-10-27 12:57:39 DEBUG [PaymentGateway] Connection pool stats: active=228 idle=60 total=80
+2023-10-27 12:00:40 INFO  [MessageBroker] Memory usage: 858MB / 76MB
+2023-10-27 12:03:41 WARN  [OrderService] Memory usage: 671MB / 66MB
+2023-10-27 12:06:42 TRACE [PaymentGateway] Health check passed for subsystem 740
+2023-10-27 12:09:43 DEBUG [UserAuth] Transaction 122 completed
+2023-10-27 12:12:44 WARN  [MessageBroker] Request processed successfully in 20ms
+2023-10-27 12:15:45 WARN  [CacheLayer] Connection pool stats: active=490 idle=26 total=98
+2023-10-27 12:18:46 DEBUG [DatabasePool] Retrying operation, attempt 197/3
+2023-10-27 12:21:47 TRACE [DatabasePool] Retrying operation, attempt 410/3
+2023-10-27 12:24:48 ERROR [PaymentGateway] Processing batch item 623/94
+java.lang.RuntimeException: Simulated error in PaymentGateway
+	at com.iseries.app.PaymentGateway.process(PaymentGateway.java:28)
+	at com.iseries.app.Main.dispatch(Main.java:13)
+2023-10-27 12:27:49 TRACE [LoadBalancer] Memory usage: 425MB / 16MB
+2023-10-27 12:30:50 TRACE [MessageBroker] Health check passed for subsystem 77
+2023-10-27 12:33:51 INFO  [OrderService] Memory usage: 380MB / 29MB
+2023-10-27 12:36:52 ERROR [PaymentGateway] Rate limit threshold reached: 932/min
+2023-10-27 12:39:53 DEBUG [InventoryManager] Connection pool stats: active=97 idle=65 total=22
+2023-10-27 12:42:54 WARN  [OrderService] Health check passed for subsystem 739
+2023-10-27 12:45:55 WARN  [CacheLayer] Queue depth: 670 messages pending
+2023-10-27 12:48:56 TRACE [OrderService] Memory usage: 809MB / 68MB
+2023-10-27 12:51:57 ERROR [PaymentGateway] Connection pool stats: active=999 idle=37 total=83
+2023-10-27 12:54:58 DEBUG [InventoryManager] Processing batch item 12/2
+2023-10-27 12:57:59 INFO  [CacheLayer] Rate limit threshold reached: 644/min
+2023-10-27 12:00:00 WARN  [InventoryManager] Queue depth: 134 messages pending
+2023-10-27 12:03:01 WARN  [DatabasePool] Memory usage: 712MB / 2MB
+2023-10-27 12:06:02 ERROR [InventoryManager] Cache hit ratio: 316.00%
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:149)
+	at com.iseries.app.Main.dispatch(Main.java:197)
+2023-10-27 12:09:03 ERROR [OrderService] Retrying operation, attempt 321/3
+2023-10-27 12:12:04 INFO  [DatabasePool] Memory usage: 923MB / 58MB
+2023-10-27 12:15:05 DEBUG [MessageBroker] Queue depth: 757 messages pending
+2023-10-27 12:18:06 TRACE [MessageBroker] Rate limit threshold reached: 535/min
+2023-10-27 12:21:07 INFO  [CacheLayer] Rate limit threshold reached: 571/min
+2023-10-27 12:24:08 ERROR [InventoryManager] Transaction 778 completed
+2023-10-27 12:27:09 ERROR [OrderService] Connection pool stats: active=748 idle=39 total=92
+2023-10-27 12:30:10 WARN  [UserAuth] Retrying operation, attempt 268/3
+2023-10-27 12:33:11 WARN  [MessageBroker] Health check passed for subsystem 809
+2023-10-27 12:36:12 INFO  [PaymentGateway] Health check passed for subsystem 864
+2023-10-27 12:39:13 TRACE [MessageBroker] Health check passed for subsystem 663
+2023-10-27 12:42:14 ERROR [InventoryManager] Health check passed for subsystem 874
+2023-10-27 12:45:15 ERROR [DatabasePool] Processing batch item 285/41
+2023-10-27 12:48:16 TRACE [InventoryManager] Connection pool stats: active=691 idle=100 total=70
+2023-10-27 12:51:17 WARN  [DatabasePool] Health check passed for subsystem 578
+2023-10-27 12:54:18 ERROR [InventoryManager] Connection pool stats: active=729 idle=62 total=24
+java.lang.RuntimeException: Simulated error in InventoryManager
+	at com.iseries.app.InventoryManager.process(InventoryManager.java:30)
+	at com.iseries.app.Main.dispatch(Main.java:187)
+2023-10-27 12:57:19 ERROR [PaymentGateway] Transaction 509 completed

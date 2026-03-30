@@ -1,21 +1,19 @@
 package com.iseries.otel.bridge.batch;
 
+import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyString;
+import static org.mockito.Mockito.*;
+
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.logs.LogRecordBuilder;
 import io.opentelemetry.api.logs.Logger;
 import io.opentelemetry.api.logs.Severity;
 import io.opentelemetry.sdk.logs.SdkLoggerProvider;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.batch.item.Chunk;
-
 import java.time.Instant;
 import java.util.List;
 import java.util.Map;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.ArgumentMatchers.anyString;
-import static org.mockito.Mockito.*;
+import org.junit.jupiter.api.Test;
+import org.springframework.batch.item.Chunk;
 
 class OtelItemWriterTest {
 
@@ -37,11 +35,12 @@ class OtelItemWriterTest {
         OtelItemWriter writer = new OtelItemWriter(mockProvider);
 
         // Data
-        Map<String, Object> item = Map.of(
-                "timestamp", System.currentTimeMillis(),
-                "level", "ERROR",
-                "message", "Something went wrong",
-                "custom_field", "value");
+        Map<String, Object> item =
+                Map.of(
+                        "timestamp", System.currentTimeMillis(),
+                        "level", "ERROR",
+                        "message", "Something went wrong",
+                        "custom_field", "value");
         Chunk<Map<String, Object>> chunk = new Chunk<>(List.of(item));
 
         // Execute

@@ -3,23 +3,23 @@ package com.iseries.otel.bridge;
 import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.logs.Logger;
 import io.opentelemetry.sdk.logs.SdkLoggerProvider;
+import java.time.Instant;
+import java.util.concurrent.TimeUnit;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
-import java.time.Instant;
-import java.util.concurrent.TimeUnit;
-
 @SpringBootTest
-@TestPropertySource(properties = {
-        "otel.exporter.otlp.endpoint=http://localhost:4317",
-        "spring.main.allow-bean-definition-overriding=true"
-})
+@TestPropertySource(
+        properties = {
+            "otel.exporter.otlp.endpoint=http://localhost:4317",
+            "spring.main.allow-bean-definition-overriding=true",
+            "spring.batch.job.enabled=false"
+        })
 public class OtelConnectivityTest {
 
-    @Autowired
-    private SdkLoggerProvider sdkLoggerProvider;
+    @Autowired private SdkLoggerProvider sdkLoggerProvider;
 
     @Test
     void testSendLogToCollector() throws InterruptedException {
@@ -31,7 +31,8 @@ public class OtelConnectivityTest {
                 .setTimestamp(Instant.now())
                 .setSeverityText("INFO")
                 .setBody("Hello OpenTelemetry! This is a test log from iSeries-Otel-Bridge.")
-                .setAttribute(AttributeKey.stringKey("test.run.id"),
+                .setAttribute(
+                        AttributeKey.stringKey("test.run.id"),
                         "manual-verification-" + System.currentTimeMillis())
                 .emit();
 

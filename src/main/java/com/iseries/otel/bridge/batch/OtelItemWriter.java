@@ -4,12 +4,16 @@ import io.opentelemetry.api.common.AttributeKey;
 import io.opentelemetry.api.logs.LogRecordBuilder;
 import io.opentelemetry.api.logs.Logger;
 import io.opentelemetry.api.logs.Severity;
+import io.opentelemetry.api.trace.Span;
+import io.opentelemetry.api.trace.SpanContext;
+import io.opentelemetry.api.trace.TraceFlags;
+import io.opentelemetry.api.trace.TraceState;
+import io.opentelemetry.context.Context;
 import io.opentelemetry.sdk.logs.SdkLoggerProvider;
-import org.springframework.batch.item.Chunk;
-import org.springframework.batch.item.ItemWriter;
-
 import java.time.Instant;
 import java.util.Map;
+import org.springframework.batch.item.Chunk;
+import org.springframework.batch.item.ItemWriter;
 
 public class OtelItemWriter implements ItemWriter<Map<String, Object>> {
 
@@ -49,24 +53,50 @@ public class OtelItemWriter implements ItemWriter<Map<String, Object>> {
             String message = (String) item.getOrDefault("message", "");
             builder.setBody(message);
 
-            // Handle Attributes
-            item.forEach((k, v) -> {
-                if (v != null && !isReserved(k)) {
-                    builder.setAttribute(AttributeKey.stringKey(k), v.toString());
+            // Handle Trace Context (TraceID and SpanID)
+            if (item.containsKey("trace_id") && item.containsKey("span_id")) {
+                try {
+                    String traceId = String.valueOf(item.get("trace_id"));
+                    String spanId = String.valueOf(item.get("span_id"));
+
+                    SpanContext spanContext =
+                            SpanContext.createFromRemoteParent(
+                                    traceId,
+                                    spanId,
+                                    TraceFlags.getDefault(),
+                                    TraceState.getDefault());
+
+                    // Create a context with this span and set it on the log record
+                    Context context = Context.root().with(Span.wrap(spanContext));
+                    builder.setContext(context);
+                } catch (Exception e) {
+                    // Ignore invalid trace/span IDs to prevent job failure,
+                    // just log without context
                 }
-            });
+            }
+
+            // Handle Attributes
+            item.forEach(
+                    (k, v) -> {
+                        if (v != null && !isReserved(k)) {
+                            builder.setAttribute(AttributeKey.stringKey(k), v.toString());
+                        }
+                    });
 
             builder.emit();
         }
     }
 
     private boolean isReserved(String key) {
-        return key.equals("message") || key.equals("level") || key.equals("timestamp");
+        return key.equals("message")
+                || key.equals("level")
+                || key.equals("timestamp")
+                || key.equals("trace_id")
+                || key.equals("span_id");
     }
 
     private Severity mapSeverity(String level) {
-        if (level == null)
-            return Severity.INFO;
+        if (level == null) return Severity.INFO;
         switch (level.toUpperCase()) {
             case "TRACE":
                 return Severity.TRACE;

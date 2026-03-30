@@ -1,0 +1,95 @@
+# Unified Deployment - Supports both Single Pod and Multiple Pod modes
+# Use ROLE environment variable to switch between modes:
+#   ROLE=single  - Direct file tailing (no Kafka, single pod)
+#   ROLE=tailer  - File tailing + Kafka publish (single pod)
+#   ROLE=consumer - Kafka consumer + OTel export (horizontal scaling)
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iseries-otel-bridge
+  namespace: observability
+  labels:
+    app: iseries-otel-bridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: iseries-otel-bridge
+  template:
+    metadata:
+      labels:
+        app: iseries-otel-bridge
+    spec:
+      containers:
+      - name: bridge
+        image: <YOUR_ACR_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/iseries-otel-bridge:latest
+        imagePullPolicy: Always
+        env:
+        # OTel Configuration
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector:4317"
+        - name: OTEL_SERVICE_NAME
+          value: "iseries-log-bridge"
+
+        # Mode Configuration (set via Helm values or Kustomize)
+        # Options: single, tailer, consumer
+        - name: ROLE
+          value: "consumer"
+
+        # Kafka Configuration (used by tailer and consumer modes)
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka:29092"
+        - name: KAFKA_TOPIC
+          value: "iseries-logs"
+        - name: KAFKA_CONSUMER_GROUP_ID
+          value: "iseries-log-consumers"
+
+        # File Tailing Configuration (used by single and tailer modes)
+        - name: INPUT_FILE_PATH_TAIL
+          value: "/var/log/iseries/app.log"
+        - name: PARSER_GROK_PATTERN
+          value: "(?s)%{TIMESTAMP_ISO8601:timestamp} %{WORD:msgid} %{GREEDYDATA:message}"
+
+        # Resource Configuration
+        - name: JAVA_OPTS
+          value: "-Xms256m -Xmx512m"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+        volumeMounts:
+        - name: log-volume
+          mountPath: /var/log/iseries
+          readOnly: true
+        livenessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /actuator/health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 5
+      volumes:
+      - name: log-volume
+        persistentVolumeClaim:
+          claimName: iseries-logs-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iseries-otel-bridge
+  namespace: observability
+spec:
+  selector:
+    app: iseries-otel-bridge
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080

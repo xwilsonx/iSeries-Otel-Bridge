@@ -1,0 +1,58 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: iseries-otel-bridge-consumer
+  namespace: observability
+  labels:
+    app: iseries-otel-bridge
+    role: consumer
+spec:
+  replicas: 3 # Horizontal scaling: multiple consumer pods
+  selector:
+    matchLabels:
+      app: iseries-otel-bridge
+      role: consumer
+  template:
+    metadata:
+      labels:
+        app: iseries-otel-bridge
+        role: consumer
+    spec:
+      containers:
+      - name: bridge
+        image: <YOUR_AWS_ACCOUNT_ID>.dkr.ecr.<REGION>.amazonaws.com/iseries-otel-bridge:latest
+        imagePullPolicy: Always
+        env:
+        - name: OTEL_EXPORTER_OTLP_ENDPOINT
+          value: "http://otel-collector:4317"
+        - name: OTEL_SERVICE_NAME
+          value: "iseries-log-bridge"
+        - name: KAFKA_BOOTSTRAP_SERVERS
+          value: "kafka:29092"
+        - name: KAFKA_TOPIC
+          value: "iseries-logs"
+        - name: KAFKA_CONSUMER_GROUP_ID
+          value: "iseries-log-consumers"
+        - name: ROLE
+          value: "consumer"
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "250m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: iseries-otel-bridge-consumer
+  namespace: observability
+spec:
+  selector:
+    app: iseries-otel-bridge
+    role: consumer
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
